@@ -1,25 +1,21 @@
-import React from 'react';
-import { Header } from './components/Header';
-import { Balance } from './components/Balance';
-import { IncomeExpenses } from './components/IncomeExpenses';
-import { TransactionList } from './components/TransactionList';
-import { AddTransaction } from './components/AddTransaction';
+import React from "react";
+import { Chart } from "./components/Chart";
+import { Dashboard } from "./components/Dashboard";
+import { Filter } from "./components/Filter";
 
-import { GlobalProvider } from './context/GlobalState';
+import { BillProvider } from "./contexts/BillContext";
 
-import './App.css';
+import "./assets/css/app.css";
 
 function App() {
   return (
-    <GlobalProvider>
-      <Header />
-      <div className="container">
-        <Balance />
-        <IncomeExpenses />
-        <TransactionList />
-        <AddTransaction />
+    <BillProvider>
+      <div className="App">
+        <Chart />
+        <Dashboard />
+        <Filter />
       </div>
-    </GlobalProvider>
+    </BillProvider>
   );
 }
 
